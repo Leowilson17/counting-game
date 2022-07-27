@@ -1,0 +1,60 @@
+.heading{
+    text-align: center;
+    position: relative;
+}
+.title{
+    font-size: 25px;
+    /* transform: translateY(50px); */
+    margin-top: 50px;
+    font-weight:700;
+}
+#ans{
+    font-size: 25px;
+    margin-top: 20px;
+}
+.end{
+text-align: center;
+margin-top: 100px;
+}
+#start{
+    font-size: 25px;
+    background-color: rgb(101, 224, 117);
+    text-transform: capitalize;
+    border: none;
+    border-radius: 10px;
+    margin-right: 90px;
+}
+#stop{
+    font-size: 25px;
+    background-color: #6575E0;
+    text-transform: capitalize;
+    border: none;
+    border-radius: 10px;
+}
+#flex{
+    transform: translateY(50px);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 465px;
+    margin: auto;
+}
+.boxes{
+    /* text-align: center; */
+    border: 1.5px solid black;
+    height: 30px;
+    width: 80px;
+    text-align: center;
+    font-size: 20px;
+    color: black;
+    padding: 40px;
+    background-color: silver;
+}
+.timer{
+    border: 2px solid green;
+    height: 200px;
+    width: 200px;
+    /* position: absolute; */
+    margin: auto;
+    margin-right: 20px;
+}
