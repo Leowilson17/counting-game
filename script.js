@@ -1,6 +1,6 @@
 var calculationScreen = document.createElement('p');
 calculationScreen.setAttribute('id', 'ques-screen');
-var time = 5;
+var time = 10;
 
 var boxDiv = document.getElementById('flex');
 // console.log(boxDiv);
@@ -59,23 +59,23 @@ function random() {
     var RandomNum_2 = Math.random();
     secondRandom = Math.floor(RandomNum_2 * quesArraySecNum.length);
     // console.log(secondRandom);
-    if (!(totalSumEmpty.includes(quesDisplay))) {
-        totalSumEmpty.push(quesDisplay);
+    if (!(totalSumEmpty.includes(total))) {
         quesDisplay = quesArrayFirstNum[FirstRandom] + ' + ' + quesArraySecNum[secondRandom];
-        console.log(quesDisplay);
+        totalSumEmpty.push(total);
+        // console.log(quesDisplay);
     }
-
     // find total   
     total = ~~(quesArrayFirstNum[FirstRandom]) + ~~(quesArraySecNum[secondRandom]);
     // console.log(total);
+    // console.log(totalSumEmpty);
 }
 
 // click answer button
 var ansBtn = document.querySelector('.boxes');
 // console.log(ansBtn);
 function valueGet(val) {
-    var x = (val);
-    time = 5;
+    var x = val;
+    time = 11;
     // console.log(x)
     if (total == val) {
         var y = ansArray.indexOf(x);
@@ -85,6 +85,7 @@ function valueGet(val) {
     else {
         y = ansArray.indexOf(x);
         empty[y].style.background = 'red';
+
     }
     random();
     show.innerHTML = quesDisplay;
@@ -108,6 +109,19 @@ function timeset() {
     }
 }
 
+// reset btn function
+var reset = document.getElementById('restart');
+// console.log(reset);
+reset.addEventListener('click',function(){
+    clearInterval(timerData);
+    time = 10;
+    timeDisplay.innerHTML = 0;
+    show.innerHTML = 'Calc';
+    strBtn.disabled = '';
+    for ( var loop = 0; loop < empty.length; loop++){
+    empty[loop].style.background = '';
+    }
+})
 
 
 
